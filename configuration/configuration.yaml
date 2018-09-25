@@ -66,6 +66,12 @@ tts:
 # Cloud
 cloud:
 
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_api_key
+    allowed_chat_ids:
+      - !secret zack_telegram_chat_id
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
