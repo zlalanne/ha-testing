@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  homeassistant:
+    image: homeassistant/home-assistant:0.76.2
+    volumes:
+      - ./configuration:/config
+      - /etc/localtime:/etc/localtime:ro
+    network_mode: "host"
+    ports:
+      - "8123:8123"
+  appdaemon:
+    image: acockburn/appdaemon:latest
+    ports:
+      - "5050:5050"
+    environment:
+      - HA_URL="http://localhost:8123"
+      - DASH_URL="http://localhost:5050"
+    network_mode: "host"
+    volumes:
+      - ./appdaemon/conf:/conf
+      - /etc/localtime:/etc/localtime:ro

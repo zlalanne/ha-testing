@@ -1,0 +1,12 @@
+log:
+  logfile: STDOUT
+  errorfile: STDERR
+appdaemon:
+  threads: 10
+  api_port: 5000
+  plugins:
+    HASS:
+      type: hass
+      ha_url: "http://localhost:8123"
+hadashboard:
+  dash_url: "http://localhost:5050"

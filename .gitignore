@@ -1,0 +1,6 @@
+appdaemon/conf/apps/__pycache__
+appdaemon/conf/compiled
+configuration/.HA_VERSION
+configuration/.uuid
+configuration/home-assistant.log
+configuration/home-assistant_v2.db
